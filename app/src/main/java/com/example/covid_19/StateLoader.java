@@ -2,6 +2,7 @@ package com.example.covid_19;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.List;
@@ -14,12 +15,6 @@ public class StateLoader extends AsyncTaskLoader<List<StateData>> {
     /** Query URL */
     private String mUrl;
 
-    /**
-     * Constructs a new {@link StateLoader}.
-     *
-     * @param context of the activity
-     * @param url to load data from
-     */
     public StateLoader(Context context, String url) {
         super(context);
         mUrl = url;

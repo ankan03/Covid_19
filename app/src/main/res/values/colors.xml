@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="textColor">#000000</color>
+    <color name="main_activity_background">#FFEB3B</color>
 </resources>

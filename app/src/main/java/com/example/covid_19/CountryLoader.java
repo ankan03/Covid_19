@@ -6,21 +6,21 @@ import android.util.Log;
 
 import java.util.List;
 
-public class CovidLoader extends AsyncTaskLoader<List<WorldData>> {
+public class CountryLoader extends AsyncTaskLoader<List<WorldData>> {
 
     /** Tag for log messages */
-    private static final String LOG_TAG = CovidLoader.class.getName();
+    private static final String LOG_TAG = CountryLoader.class.getName();
 
     /** Query URL */
     private String mUrl;
 
     /**
-     * Constructs a new {@link CovidLoader}.
+     * Constructs a new {@link CountryLoader}.
      *
      * @param context of the activity
      * @param url to load data from
      */
-    public CovidLoader(Context context, String url) {
+    public CountryLoader(Context context, String url) {
         super(context);
         mUrl = url;
     }
@@ -29,6 +29,7 @@ public class CovidLoader extends AsyncTaskLoader<List<WorldData>> {
     protected void onStartLoading() {
         Log.i(LOG_TAG,"TEST: onStartLoading() called ...");
         forceLoad();
+
     }
 
     /**
@@ -42,7 +43,7 @@ public class CovidLoader extends AsyncTaskLoader<List<WorldData>> {
         }
 
         // Perform the network request, parse the response, and extract a list of earthquakes.
-        List<WorldData> countryList = QueryUtils.fetchCovid19Data(mUrl);
+        List<WorldData> countryList = QueryUtilsCountry.fetchCovid19Data(mUrl);
         return countryList;
     }
 }

@@ -25,7 +25,9 @@ public class CategoryAdapter extends FragmentPagerAdapter {
             return new CountryFragment();
         } else if (position == 1) {
             return new StateFragment();
-        } else {
+        }else if (position==2){
+            return new HistoryFragment();
+        }else {
             return new NewsFragment();
         }
     }
@@ -35,7 +37,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      */
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -44,6 +46,8 @@ public class CategoryAdapter extends FragmentPagerAdapter {
             return mContext.getString(R.string.category_world);
         } else if (position == 1) {
             return mContext.getString(R.string.category_country);
+        }else if (position == 2) {
+            return mContext.getString(R.string.category_history);
         }else {
             return mContext.getString(R.string.category_news);
         }

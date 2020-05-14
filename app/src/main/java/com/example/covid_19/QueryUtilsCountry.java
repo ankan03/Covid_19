@@ -18,12 +18,12 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class QueryUtils {
+public final class QueryUtilsCountry {
 
 
     private static final String LOG_TAG = "QueryUtils";
 
-    QueryUtils() {
+    QueryUtilsCountry() {
     }
     private static URL createUrl(String stringUrl) {
         URL url = null;

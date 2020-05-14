@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CovidAdapter extends ArrayAdapter {
+public class CountryAdapter extends ArrayAdapter {
 
     private Context context;
 
-    public CovidAdapter(Context context, ArrayList<WorldData> cityHolders ) {
+    public CountryAdapter(Context context, ArrayList<WorldData> cityHolders ) {
         super(context, 0, cityHolders);
         this.context = context;
     }

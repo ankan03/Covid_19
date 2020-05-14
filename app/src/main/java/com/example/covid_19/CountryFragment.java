@@ -10,14 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import com.example.covid_19.R;
-import com.example.covid_19.WorldData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,14 +32,11 @@ public class CountryFragment extends Fragment
     private static final String USGS_REQUEST_URL =
             "https://disease.sh/v2/countries";
     //"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=2";
-    /**
-     * Constant value for the earthquake loader ID. We can choose any integer.
-     * This really only comes into play if you're using multiple loaders.
-     */
+
     private static final int EARTHQUAKE_LOADER_ID = 1;
 
     /** Adapter for the list of earthquakes */
-    private CovidAdapter mAdapter;
+    private CountryAdapter mAdapter;
 
 
 
@@ -62,11 +55,15 @@ public class CountryFragment extends Fragment
         mEmptyStateTextView = (TextView) rootView.findViewById(R.id.empty_view);
         ListView countryListView = (ListView) rootView.findViewById(R.id.list);
 
+
+        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.heading_country, countryListView, false);
+        countryListView.addHeaderView(header, null, false);
+
         mEmptyStateTextView = (TextView) rootView.findViewById(R.id.empty_view);
         //mEmptyStateTextView.setText(R.string.no_earthquakes);
         countryListView.setEmptyView(mEmptyStateTextView);
 
-        mAdapter = new CovidAdapter(getActivity(), new ArrayList<WorldData>());
+        mAdapter = new CountryAdapter(getActivity(), new ArrayList<WorldData>());
 
         countryListView.setAdapter(mAdapter);
         loadingIndicator = rootView.findViewById(R.id.loading_indicator);
@@ -103,7 +100,7 @@ public class CountryFragment extends Fragment
     public Loader<List<WorldData>> onCreateLoader(int i, Bundle bundle) {
         // Create a new loader for the given URL
         Log.i(LOG_TAG,"TEST: onCreateLoader() called ...");
-        return new CovidLoader(getActivity(), USGS_REQUEST_URL);
+        return new CountryLoader(getActivity(), USGS_REQUEST_URL);
     }
 
     @Override

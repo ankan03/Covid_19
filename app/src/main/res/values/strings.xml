@@ -4,5 +4,6 @@
     <string name="no_internet_connection">No internet connection</string>
     <string name="category_world">World</string>
     <string name="category_country">India</string>
+    <string name="category_history">History</string>
     <string name="category_news">News</string>
 </resources>

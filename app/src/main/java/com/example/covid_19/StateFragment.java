@@ -2,7 +2,10 @@ package com.example.covid_19;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
+
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -10,13 +13,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 import android.app.LoaderManager.LoaderCallbacks;
-
 
 
 public class StateFragment extends Fragment
@@ -26,6 +29,8 @@ public class StateFragment extends Fragment
     private static final String LOG_TAG = StateFragment.class.getName();
     private TextView mEmptyStateTextView;
     View loadingIndicator_state;
+
+    
 
 
     /** URL for earthquake data from the USGS dataset */
@@ -54,6 +59,11 @@ public class StateFragment extends Fragment
         mEmptyStateTextView = (TextView) rootView_state.findViewById(R.id.empty_view_state);
         ListView stateListView = (ListView) rootView_state.findViewById(R.id.list_state);
 
+
+        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.heading_state, stateListView, false);
+        stateListView.addHeaderView(header, null, false);
+
+
         mEmptyStateTextView = (TextView) rootView_state.findViewById(R.id.empty_view_state);
         //mEmptyStateTextView.setText(R.string.no_earthquakes);
         stateListView.setEmptyView(mEmptyStateTextView);
@@ -62,7 +72,6 @@ public class StateFragment extends Fragment
 
         stateListView.setAdapter(mAdapter);
         loadingIndicator_state = rootView_state.findViewById(R.id.loading_indicator_state);
-
 
         Log.i(LOG_TAG,"TEST: calling initLoader() ...");
 
@@ -128,4 +137,12 @@ public class StateFragment extends Fragment
 
 
 
+
+
 }
+
+
+
+
+//    SharedPreferences receving_response = (SharedPreferences) getActivity().getSharedPreferences("preference",Context.MODE_PRIVATE);
+//    String state_code = receving_response.getString("state_code",null);
