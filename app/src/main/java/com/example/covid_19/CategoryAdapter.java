@@ -16,25 +16,19 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
-    /**
-     * Return the {@link Fragment} that should be displayed for the given page number.
-     */
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
             return new CountryFragment();
         } else if (position == 1) {
             return new StateFragment();
-        }else if (position==2){
+        } else if (position == 2) {
             return new HistoryFragment();
-        }else {
+        } else {
             return new NewsFragment();
         }
     }
 
-    /**
-     * Return the total number of pages.
-     */
     @Override
     public int getCount() {
         return 4;
@@ -46,9 +40,9 @@ public class CategoryAdapter extends FragmentPagerAdapter {
             return mContext.getString(R.string.category_world);
         } else if (position == 1) {
             return mContext.getString(R.string.category_country);
-        }else if (position == 2) {
+        } else if (position == 2) {
             return mContext.getString(R.string.category_history);
-        }else {
+        } else {
             return mContext.getString(R.string.category_news);
         }
     }

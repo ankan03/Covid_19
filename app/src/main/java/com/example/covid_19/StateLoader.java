@@ -9,10 +9,8 @@ import java.util.List;
 
 public class StateLoader extends AsyncTaskLoader<List<StateData>> {
 
-    /** Tag for log messages */
-    private static final String LOG_TAG = StateLoader.class.getName();
 
-    /** Query URL */
+    private static final String LOG_TAG = StateLoader.class.getName();
     private String mUrl;
 
     public StateLoader(Context context, String url) {
@@ -25,10 +23,6 @@ public class StateLoader extends AsyncTaskLoader<List<StateData>> {
         Log.i(LOG_TAG,"TEST: onStartLoading() called ...");
         forceLoad();
     }
-
-    /**
-     * This is on a background thread.
-     */
     @Override
     public List<StateData> loadInBackground() {
         Log.i(LOG_TAG,"TEST: loadInBackground() called ...");
@@ -36,7 +30,6 @@ public class StateLoader extends AsyncTaskLoader<List<StateData>> {
             return null;
         }
 
-        // Perform the network request, parse the response, and extract a list of earthquakes.
         List<StateData> stateList = QueryUtilsState.fetchStateData(mUrl);
         return stateList;
     }

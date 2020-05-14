@@ -38,7 +38,6 @@ public final class QueryUtilsState {
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
 
-        // If the URL is null, then return early.
         if (url == null) {
             return jsonResponse;
         }
@@ -52,8 +51,6 @@ public final class QueryUtilsState {
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
-            // If the request was successful (response code 200),
-            // then read the input stream and parse the response.
             if (urlConnection.getResponseCode() == 200) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
@@ -67,19 +64,13 @@ public final class QueryUtilsState {
                 urlConnection.disconnect();
             }
             if (inputStream != null) {
-                // Closing the input stream could throw an IOException, which is why
-                // the makeHttpRequest(URL url) method signature specifies than an IOException
-                // could be thrown.
+
                 inputStream.close();
             }
         }
         return jsonResponse;
     }
 
-    /**
-     * Convert the {@link InputStream} into a String which contains the
-     * whole JSON response from the server.
-     */
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder output = new StringBuilder();
         if (inputStream != null) {
@@ -94,12 +85,7 @@ public final class QueryUtilsState {
         return output.toString();
     }
 
-    /**
-     * Return a list of {@link StateData} objects that has been built up from
-     * parsing the given JSON response.
-     */
     private static List<StateData> extractFeatureFromJson(String stateDataJSON) {
-        // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(stateDataJSON)) {
             return null;
         }
@@ -108,7 +94,6 @@ public final class QueryUtilsState {
 
         try {
 
-            // Create a JSONObject from the JSON response string
             JSONArray baseJsonResponse = new JSONArray(stateDataJSON);
 
             for (int i=0;i<baseJsonResponse.length();i++){
@@ -142,22 +127,10 @@ public final class QueryUtilsState {
         }
         return stateDataUpdate;
     }
-    /**
-     * Query the USGS dataset and return a list of {@link StateData} objects.
-     */
     public static List<StateData> fetchStateData(String requestUrl) {
         Log.i(LOG_TAG,"TEST: fetchStateData() called ...");
-
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-        // Create URL object
         URL url = createUrl(requestUrl);
 
-        // Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
@@ -165,10 +138,8 @@ public final class QueryUtilsState {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        // Extract relevant fields from the JSON response and create a list of {@link Covid19}s
         List<StateData> covid19StateUpdate = extractFeatureFromJson(jsonResponse);
 
-        // Return the list of {@link covid19StateUpdate}s
         return covid19StateUpdate;
     }
 }
