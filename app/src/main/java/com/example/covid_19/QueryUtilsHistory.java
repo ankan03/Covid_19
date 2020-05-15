@@ -104,27 +104,29 @@ public final class QueryUtilsHistory {
         try {
 
 
-            String a[] = {"an", "ap", "ar", "as", "br", "ch", "ct", "dd", "dl", "dn", "ga", "gj", "hp", "hr", "jh", "jk", "ka", "kl", "la", "ld", "mh", "ml", "mn", "mp", "mz", "nl", "or", "pb", "py", "rj", "sk", "tg", "tn", "tr", "tt", "up", "ut", "wb"};
+            String a[] = {"an", "ap", "ar", "as", "br", "ch", "ct", "dd", "dl", "dn", "ga", "gj", "hp", "hr", "jh", "jk", "ka", "kl", "la", "ld", "mh", "ml", "mn", "mp", "mz", "nl", "or", "pb", "py", "rj", "sk", "tg", "tn", "tr", "up", "ut", "wb"};
 
             JSONObject baseJsonResponse = new JSONObject(historyDataJSON);
 
             JSONArray dailyDataHistory = baseJsonResponse.getJSONArray("states_daily");
 
 
-            for (int j = 0; j < a.length; j++) {
+
 
                 for (int i = dailyDataHistory.length() - 1; i > 0; i--) {
                     JSONObject dailyData = dailyDataHistory.getJSONObject(i);
 
+
                     String date = dailyData.getString("date");
                     String status = dailyData.getString("status");
+                    for (int j = 0; j < a.length; j++) {
 
-                    String noOfIssue = dailyData.getString(a[j]);
+                        String noOfIssue = dailyData.getString(a[j]);
 
-                    HistoryData historyData = new HistoryData(a[j], date, status, noOfIssue);
-                    historyDataUpdate.add(historyData);
+                        HistoryData historyData = new HistoryData(a[j], date, status, noOfIssue);
+                        historyDataUpdate.add(historyData);
 
-                }
+                    }
             }
         } catch (JSONException e) {
             Log.e("QueryUtilsHistory", "Problem parsing the historyDataUpdate JSON results", e);
