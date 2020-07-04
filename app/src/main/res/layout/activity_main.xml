@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/main_activity_background"
     android:orientation="vertical"
+    android:id="@+id/fragment_container"
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout

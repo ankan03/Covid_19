@@ -1,12 +1,13 @@
 package com.example.covid_19;
 
+
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.util.Log;
 
 import java.util.List;
 
-public class CountryLoader extends AsyncTaskLoader<List<WorldData>> {
+public class CountryLoader extends AsyncTaskLoader<List<CountryData>> {
 
     private static final String LOG_TAG = CountryLoader.class.getName();
 
@@ -17,21 +18,22 @@ public class CountryLoader extends AsyncTaskLoader<List<WorldData>> {
         mUrl = url;
     }
 
+
     @Override
     protected void onStartLoading() {
-        Log.i(LOG_TAG,"TEST: onStartLoading() called ...");
+        Log.i(LOG_TAG, "TEST: onStartLoading() called ...");
         forceLoad();
 
     }
+
     @Override
-    public List<WorldData> loadInBackground() {
-        Log.i(LOG_TAG,"TEST: loadInBackground() called ...");
+    public List<CountryData> loadInBackground() {
+        Log.i(LOG_TAG, "TEST: loadInBackground() called ...");
         if (mUrl == null) {
             return null;
         }
 
-
-        List<WorldData> countryList = QueryUtilsCountry.fetchCovid19Data(mUrl);
+        List<CountryData> countryList = QueryUtilsCountry.fetchCovid19Data(mUrl);
         return countryList;
     }
 }

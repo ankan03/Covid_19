@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/cardview_light_background"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:padding="10dp">-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/individual_state_history_date"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_weight="2"-->
+<!--        android:fontFamily="sans-serif-smallcaps"-->
+<!--        android:textColor="@color/textColor"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:text="Date" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/individual_state_history_cases"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="end"-->
+<!--        android:textColor="@color/casesColor"-->
+<!--        tools:text="Cases" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/individual_state_history_recover"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="end"-->
+<!--        android:textColor="@color/recoverColor"-->
+<!--        tools:text="Recover" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/individual_state_history_daths"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:gravity="end"-->
+<!--        android:textColor="@color/dethColor"-->
+<!--        tools:text="Death" />-->
+
+
+<!--</LinearLayout>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:orientation="horizontal"
+
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="1.5"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        tools:text="Date" />
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="1.5"
+        android:gravity="end"
+        android:textColor="@color/textColor"
+        tools:text="Status" />
+
+
+    <TextView
+        android:id="@+id/noOfIssue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="1"
+        android:gravity="end"
+        android:textColor="@color/textColor"
+        tools:text="no" />
+
+
+</LinearLayout>

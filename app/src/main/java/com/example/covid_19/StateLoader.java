@@ -2,10 +2,10 @@ package com.example.covid_19;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.List;
+
 
 public class StateLoader extends AsyncTaskLoader<List<StateData>> {
 
@@ -30,7 +30,8 @@ public class StateLoader extends AsyncTaskLoader<List<StateData>> {
             return null;
         }
 
-        List<StateData> stateList = QueryUtilsState.fetchStateData(mUrl);
+        List<StateData> stateList = StateQueryUtils.fetchStateData(mUrl);
         return stateList;
     }
 }
+

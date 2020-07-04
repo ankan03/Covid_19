@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/state_code"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/magnitude_cycle"
+            android:gravity="center"
+            android:textColor="@color/textColor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/textColor"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            tools:text="State" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/district_code"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/magnitude_cycle"
+            android:gravity="center"
+            android:src="@drawable/district"
+
+            />
+
+        <TextView
+            android:id="@+id/district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1.5"
+            android:textColor="@color/textColor"
+            tools:text="District" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cases_district"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/casesColor"
+                tools:text="Cases" />
+
+
+            <TextView
+                android:id="@+id/today_cases_district"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/ic_arrow_upward_red"
+                android:gravity="end"
+                android:textColor="@color/casesColor"
+                android:textSize="10dp"
+                tools:text="Today" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recovered_district"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/recoverColor"
+                tools:text="Recover" />
+
+
+            <TextView
+                android:id="@+id/today_recover_district"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/ic_arrow_upward_green"
+                android:gravity="end"
+                android:textColor="@color/recoverColor"
+                android:textSize="10dp"
+                tools:text="Today" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/deaths_district"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/dethColor"
+                tools:text="Deaths" />
+
+
+            <TextView
+                android:id="@+id/today_deth_district"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/ic_arrow_upward_black"
+                android:gravity="end"
+                android:textColor="@color/dethColor"
+                android:textSize="10dp"
+                tools:text="Today" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

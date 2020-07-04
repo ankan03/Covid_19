@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/edtSearch_state"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_shadow"
+        android:drawableLeft="@drawable/ic_search_24"
+        android:drawablePadding="15dp"
+        android:hint="Search State"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
 
     <ListView
+        android:id="@+id/list_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:id="@+id/list_state"/>
+        android:layout_below="@id/edtSearch_state"
+        android:dividerHeight="0dp" />
+
 
     <TextView
         android:id="@+id/empty_view_state"
@@ -19,9 +39,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:background="#DDDDDD"
-        android:textAppearance="?android:textAppearanceMedium"
-        />
+        android:textAppearance="?android:textAppearanceMedium" />
 
     <!-- Loading indicator is only shown before the first load -->
     <ProgressBar

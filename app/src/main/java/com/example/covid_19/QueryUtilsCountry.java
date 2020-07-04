@@ -85,18 +85,18 @@ public final class QueryUtilsCountry {
     }
 
 
-    private static List<WorldData> extractFeatureFromJson(String covid19JSON) {
+    private static List<CountryData> extractFeatureFromJson(String covid19JSON) {
         if (TextUtils.isEmpty(covid19JSON)) {
             return null;
         }
 
-        List<WorldData> covidUpdate = new ArrayList<>();
+        List<CountryData> covidUpdate = new ArrayList<>();
 
         try {
 
             JSONArray baseJsonResponse = new JSONArray(covid19JSON);
 
-            for (int i=0;i<baseJsonResponse.length();i++){
+            for (int i = 0; i < baseJsonResponse.length(); i++) {
                 JSONObject currentCountry = baseJsonResponse.getJSONObject(i);
 
                 String country = currentCountry.getString("country");
@@ -104,29 +104,30 @@ public final class QueryUtilsCountry {
                 String todayCases = currentCountry.getString("todayCases");
                 String deaths = currentCountry.getString("deaths");
                 String todayDeaths = currentCountry.getString("todayDeaths");
-                Long recovered = currentCountry.getLong("recovered");
+                String recovered = currentCountry.getString("recovered");
+                String todayRecovered = currentCountry.getString("todayRecovered");
                 String active = currentCountry.getString("active");
 
 
                 JSONObject countryInfo = currentCountry.getJSONObject("countryInfo");
                 String flag = countryInfo.getString("flag");
 
-                WorldData worldData = new WorldData(country,flag,cases,todayCases,deaths,todayDeaths,recovered,active);
-                covidUpdate.add(worldData);
-                }
-            }catch (JSONException e) {
+                CountryData countryData = new CountryData(country, flag, cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, active);
+                covidUpdate.add(countryData);
+            }
+        } catch (JSONException e) {
             Log.e("QueryUtils", "Problem parsing the covidUpdate JSON results", e);
         }
-    return covidUpdate;
+        return covidUpdate;
     }
 
-    public static List<WorldData> fetchCovid19Data(String requestUrl) {
-        Log.i(LOG_TAG,"TEST: fetchCovid19quakeData() called ...");
+    public static List<CountryData> fetchCovid19Data(String requestUrl) {
+        Log.i(LOG_TAG, "TEST: fetchCovid19quakeData() called ...");
 
 
         URL url = createUrl(requestUrl);
 
-       String jsonResponse = null;
+        String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
         } catch (IOException e) {
@@ -134,7 +135,7 @@ public final class QueryUtilsCountry {
         }
 
 
-        List<WorldData> covid19Update = extractFeatureFromJson(jsonResponse);
+        List<CountryData> covid19Update = extractFeatureFromJson(jsonResponse);
         return covid19Update;
     }
 }

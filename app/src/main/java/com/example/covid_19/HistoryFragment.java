@@ -90,6 +90,7 @@ public class HistoryFragment extends Fragment
     public Loader<List<HistoryData>> onCreateLoader(int i, Bundle bundle) {
         // Create a new loader for the given URL
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
+        mAdapter.clear();
         return new HistoryLoader(getActivity(), HISTORY_USGS_REQUEST_URL);
     }
 
@@ -103,12 +104,13 @@ public class HistoryFragment extends Fragment
         mEmptyStateTextView.setText(R.string.unable_to_load);
 
         Log.i(LOG_TAG, "TEST: onLoadFinished() called ...");
-        mAdapter.clear();
+//        mAdapter.clear();
 
         // If there is a valid list of {@link History Fragment}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
-        if (historyDataList != null && !historyDataList.isEmpty()) {
+        if (mAdapter.isEmpty() && historyDataList != null && !historyDataList.isEmpty()) {
             mAdapter.addAll(historyDataList);
+//            mAdapter.notifyDataSetChanged();
         }
     }
 

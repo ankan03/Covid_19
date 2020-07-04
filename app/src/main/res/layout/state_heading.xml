@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_light_background"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <!--    <EditText-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:id="@+id/edtSearch_state"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:paddingLeft="10dp"-->
+    <!--        android:hint="Search State"-->
+    <!--        android:drawablePadding="15dp"-->
+    <!--        android:background="@drawable/edittext_shadow"-->
+    <!--        android:drawableLeft="@drawable/ic_search_24"/>-->
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
+        android:padding="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:text="state code"
+            android:textColor="#000"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1.5"
+            android:gravity="center_vertical"
+            android:text="State"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/cases_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Cases"
+            android:textColor="@color/casesColor" />
+
+        <TextView
+            android:id="@+id/recover_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Recover"
+            android:textColor="@color/recoverColor" />
+
+        <TextView
+            android:id="@+id/death_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Death"
+            android:textColor="@color/dethColor" />
+    </LinearLayout>
+</LinearLayout>

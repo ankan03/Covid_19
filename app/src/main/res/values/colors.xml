@@ -4,5 +4,17 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="textColor">#000000</color>
+    <color name="casesColor">#F44336</color>
+    <color name="recoverColor">#009688</color>
+    <color name="dethColor">#000</color>
     <color name="main_activity_background">#FFEB3B</color>
+
+    <color name="color_one">#fb7268</color>
+    <color name="color_white">#ededf2</color>
+    <color name="color_two">#E3E0E0</color>
+
+    <color name="cases_bar_graph_color">#FFEB3B</color>
+    <color name="recovered_bar_graph_color">#0FF418</color>
+    <color name="deaths_bar_graph_color">#F31707</color>
+    <color name="active_bar_graph_color">#FF9800</color>
 </resources>

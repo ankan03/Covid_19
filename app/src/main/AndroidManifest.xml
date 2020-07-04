@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covid_19">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/bacteria"
@@ -11,6 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BarGraphActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IndividualCountryBarGraph"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashAnimation"
             android:screenOrientation="portrait">
@@ -20,9 +33,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".WorldActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1" /> <!-- <activity android:name="com.example.covid_19.cActivity"/> -->
+        <activity
+            android:name=".cActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IndividualDistrictHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IndividualStateHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IndividualDistrictBarGraph"
+            android:screenOrientation="portrait" />
     </application>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>

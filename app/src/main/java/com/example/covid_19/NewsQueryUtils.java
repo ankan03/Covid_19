@@ -3,6 +3,12 @@ package com.example.covid_19;
 import android.text.TextUtils;
 import android.util.Log;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,15 +20,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public final class NewsQueryUtils {
 
 
     private static final String LOG_TAG = "NewsQueryUtils";
+//    private static Locale srcLanguage = Locale.ENGLISH;
+//    private static Locale dstLanguage = Locale.ENGLISH;
 
     NewsQueryUtils() {
     }
@@ -149,6 +159,26 @@ public final class NewsQueryUtils {
         // Return the list of {@link Covid19}s
         return newsDataUpdate;
     }
+
+//    public String translate(String text) {
+//        String translated = null;
+//        try {
+//            String query = URLEncoder.encode(text, "UTF-8");
+//            String langpair = URLEncoder.encode(srcLanguage.getLanguage()+"|"+dstLanguage.getLanguage(), "UTF-8");
+//            String url = "http://mymemory.translated.net/api/get?q="+query+"&langpair="+langpair;
+//            HttpClient hc = new DefaultHttpClient();
+//            HttpGet hg = new HttpGet(url);
+//            HttpResponse hr = hc.execute(hg);
+//            if(hr.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+//                JSONObject response = new JSONObject(EntityUtils.toString(hr.getEntity()));
+//                translated = response.getJSONObject("responseData").getString("translatedText");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return translated;
+//    }
+
 }
 
 

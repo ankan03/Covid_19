@@ -1,6 +1,9 @@
 package com.example.covid_19;
 
-public class WorldData {
+import java.util.ArrayList;
+import java.util.List;
+
+public class CountryData {
 
 //    {
 //        "updated":1589020011636,
@@ -27,17 +30,18 @@ public class WorldData {
 //            "continent":"Asia"
 //    }
 
-        private String country;
-        private String flag;
-        private String cases;
-        private String todayCases;
-        private String deaths;
-        private String todayDeaths;
-        private Long recovered;
-        private String active;
+    private String country;
+    private String flag;
+    private String cases;
+    private String todayCases;
+    private String deaths;
+    private String todayDeaths;
+    private String recovered;
+    private String todayRecovered;
+    private String active;
+//    private List<String> countryList;
 
-
-    public WorldData(String country, String flag,String cases, String todayCases, String deaths,String todayDeaths, Long recovered, String active) {
+    public CountryData(String country, String flag, String cases, String todayCases, String deaths, String todayDeaths, String recovered, String todayRecovered, String active/*, String individualCountryName,int index*/) {
         this.country = country;
         this.flag = flag;
         this.cases = cases;
@@ -46,8 +50,14 @@ public class WorldData {
         this.todayDeaths = todayDeaths;
         this.recovered = recovered;
         this.active = active;
+        this.todayRecovered = todayRecovered;
+//        countryList.add(index,individualCountryName);
 
     }
+
+//    public List<String> getCountryList() {
+//        return countryList;
+//    }
 
     public String getCountry() {
         return country;
@@ -69,7 +79,7 @@ public class WorldData {
         return deaths;
     }
 
-    public Long getRecovered() {
+    public String getRecovered() {
         return recovered;
     }
 
@@ -80,4 +90,10 @@ public class WorldData {
     public String getActive() {
         return active;
     }
+
+    public String getTodayRecovered() {
+        return todayRecovered;
+    }
+
+
 }

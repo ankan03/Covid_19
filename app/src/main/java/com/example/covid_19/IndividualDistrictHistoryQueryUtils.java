@@ -19,13 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public final class QueryUtilsState {
+public final class IndividualDistrictHistoryQueryUtils {
 
+    private static final String LOG_TAG = "QueryUtils";
+    private static String districtName, stateName;
 
-    private static final String LOG_TAG = "QueryUtilsState";
-
-    QueryUtilsState() {
+    IndividualDistrictHistoryQueryUtils() {
     }
+
     private static URL createUrl(String stringUrl) {
         URL url = null;
         try {
@@ -35,6 +36,7 @@ public final class QueryUtilsState {
         }
         return url;
     }
+
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
 
@@ -85,50 +87,50 @@ public final class QueryUtilsState {
         return output.toString();
     }
 
-    private static List<StateData> extractFeatureFromJson(String stateDataJSON) {
-        if (TextUtils.isEmpty(stateDataJSON)) {
+
+    private static List<IndividualDistrictHistoryData> extractFeatureFromJson(String individualDistrictHistoryJSON) {
+
+        if (TextUtils.isEmpty(individualDistrictHistoryJSON)) {
             return null;
         }
 
-        List<StateData> stateDataUpdate = new ArrayList<>();
+        List<IndividualDistrictHistoryData> individualDistrictHistoryData1 = new ArrayList<>();
 
         try {
 
-            JSONArray baseJsonResponse = new JSONArray(stateDataJSON);
+            JSONObject baseJsonResponse = new JSONObject(individualDistrictHistoryJSON);
+            JSONObject districtsDaily = baseJsonResponse.getJSONObject("districtsDaily");
+            JSONObject stateNameOfCurrentDistrict = districtsDaily.getJSONObject(stateName);
+            JSONArray individualDistrict = stateNameOfCurrentDistrict.getJSONArray(districtName);
 
-            for (int i=0;i<baseJsonResponse.length();i++){
-                JSONObject currentState = baseJsonResponse.getJSONObject(i);
+            for (int i = individualDistrict.length() - 1; i > 0; i--) {
 
-                String state = currentState.getString("state");
-                String stateCode = currentState.getString("statecode");
+                JSONObject currentIndividualDistrictHistory = individualDistrict.getJSONObject(i);
 
-                JSONArray districtData = currentState.getJSONArray("districtData");
+                String Confirmed = currentIndividualDistrictHistory.getString("confirmed");
+                String Deaths = currentIndividualDistrictHistory.getString("deceased");
+                String Recovered = currentIndividualDistrictHistory.getString("recovered");
+                String Date = currentIndividualDistrictHistory.getString("date");
+                String active = currentIndividualDistrictHistory.getString("active");
 
-                    for (int j=0;j<districtData.length();j++){
-                        JSONObject districtDataObject = districtData.getJSONObject(j);
+                IndividualDistrictHistoryData individualDistrictHistoryData = new IndividualDistrictHistoryData(Confirmed, Deaths, Recovered, Date, active);
 
-                        String district = districtDataObject.getString("district");
-
-                        String confirmed = districtDataObject.getString("confirmed");
-                        String deceased = districtDataObject.getString("deceased");
-                        String recovered = districtDataObject.getString("recovered");
-
-                        JSONObject todaysData = districtDataObject.getJSONObject("delta");
-                        String todayConfirmed = todaysData.getString("confirmed");
-                        String todayDeceased = todaysData.getString("deceased");
-                        String todayRecovered = todaysData.getString("recovered");
-
-                        StateData stateData = new StateData(state, stateCode,district,confirmed,todayConfirmed,deceased,todayDeceased,recovered,todayRecovered);
-                        stateDataUpdate.add(stateData);
-                    }
+                individualDistrictHistoryData1.add(individualDistrictHistoryData);
             }
-        }catch (JSONException e) {
-            Log.e("QueryUtilsState", "Problem parsing the stateDataUpdate JSON results", e);
+
+        } catch (JSONException e) {
+            Log.e(LOG_TAG, "Problem parsing the IndividualDistrictHistoryActivity JSON results", e);
         }
-        return stateDataUpdate;
+
+        return individualDistrictHistoryData1;
     }
-    public static List<StateData> fetchStateData(String requestUrl) {
-        Log.i(LOG_TAG,"TEST: fetchStateData() called ...");
+
+    public static List<IndividualDistrictHistoryData> fetchCovid19DataForIndividualDistrict(String requestUrl, String district, String state) {
+        districtName = district;
+        stateName = state;
+        Log.i(LOG_TAG, "TEST: fetch<IndividualDistrictHistoryCovid19Data() called ...");
+
+
         URL url = createUrl(requestUrl);
 
         String jsonResponse = null;
@@ -138,9 +140,13 @@ public final class QueryUtilsState {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        List<StateData> covid19StateUpdate = extractFeatureFromJson(jsonResponse);
 
-        return covid19StateUpdate;
+        List<IndividualDistrictHistoryData> covid19Update = extractFeatureFromJson(jsonResponse);
+        return covid19Update;
     }
 }
+
+
+
+
 

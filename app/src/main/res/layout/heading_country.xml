@@ -1,54 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:id="@+id/search"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:singleLine="true"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:hint="Search"-->
+<!--        android:drawablePadding="15dp"-->
+<!--        android:imeOptions="actionSearch"-->
+<!--        android:drawableLeft="@drawable/ic_search_24"-->
+<!--        android:background="@drawable/edittext_shadow"-->
+<!--        />-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@color/cardview_light_background"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="10dp">-->
+<!--<TextView android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:text="Select country"-->
+<!--    android:layout_marginLeft="10dp"-->
+<!--    android:layout_marginBottom="5dp"-->
+<!--    android:padding="5dp"-->
+<!--    />-->
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner1"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@android:drawable/btn_dropdown"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:padding="5dp"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:id="@+id/search_layout"-->
+<!--        android:visibility="invisible">-->
+<!--    <TextView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="2"-->
+<!--        tools:text="Country"-->
+<!--        android:id="@+id/search_country"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            tools:text="Cases"-->
+<!--            android:id="@+id/search_cases"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            tools:text="Recover"-->
+<!--            android:id="@+id/search_recover"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            tools:text="Death"-->
+<!--            android:id="@+id/search_death"/>-->
+
+
+<!--    </LinearLayout>-->
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/cardview_light_background"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/place"
-        android:layout_width="0dp"
+    <!--    <EditText-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:id="@+id/edtSearch_country"-->
+    <!--        android:layout_margin="5dp"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:paddingLeft="10dp"-->
+    <!--        android:hint="Search Country"-->
+    <!--        android:drawablePadding="15dp"-->
+    <!--        android:background="@drawable/edittext_shadow"-->
+    <!--        android:drawableLeft="@drawable/ic_search_24"/>-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="41dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="2"
-        android:text="Country"
+        android:background="@color/cardview_light_background"
+        android:orientation="horizontal">
 
-        android:textColor="@color/textColor" />
 
-    <TextView
-        android:id="@+id/cases_heading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="41dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1.5"
+            android:text="Country"
 
-        android:layout_weight="1"
-        android:text="Cases"
-        android:textColor="@color/textColor"
+            android:textColor="@color/textColor" />
 
-        />
+        <TextView
+            android:id="@+id/cases_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="Cases"
+            android:textColor="@color/casesColor"
 
-    <TextView
-        android:id="@+id/recover_heading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+            />
 
-        android:layout_weight="1"
-        android:text="Recover"
-        android:textColor="@color/textColor" />
+        <TextView
+            android:id="@+id/recover_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="Recover"
+            android:textColor="@color/recoverColor" />
 
-    <TextView
-        android:id="@+id/death_heading"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-
-        android:layout_weight="1"
-        android:text="Death"
-        android:textColor="@color/textColor" />
+        <TextView
+            android:id="@+id/death_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="Death"
+            android:textColor="@color/dethColor" />
+    </LinearLayout>
 </LinearLayout>

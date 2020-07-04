@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".SymtomsFragment">-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".SymtomsFragment"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="10dp">-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Most common symptoms"-->
+<!--        android:fontFamily="sans-serif-smallcaps"-->
+<!--        android:textStyle="italic|bold"-->
+<!--        android:id="@+id/most_common_symtoms"-->
+<!--        android:textColor="@color/textColor"-->
+<!--        android:padding="10dp"-->
+<!--        />-->
+
+
+<!--    <ListView-->
+<!--        android:layout_below="@id/most_common_symtoms"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World!"-->
+<!--        android:id="@+id/list_most_common_symptoms"-->
+<!--        android:dividerHeight="0dp" />-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Less common symptoms"-->
+<!--        android:fontFamily="sans-serif-smallcaps"-->
+<!--        android:textStyle="italic|bold"-->
+<!--        android:id="@+id/less_common_symtoms"-->
+<!--        android:textColor="@color/textColor"-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_below="@id/list_most_common_symptoms"-->
+<!--        />-->
+
+
+<!--    <ListView-->
+
+<!--        android:layout_below="@id/most_common_symtoms"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World!"-->
+<!--        android:id="@+id/list_less_common_symptoms"-->
+<!--        android:dividerHeight="0dp" />-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Less common symptoms"-->
+<!--        android:fontFamily="sans-serif-smallcaps"-->
+<!--        android:textStyle="italic|bold"-->
+<!--        android:id="@+id/serious_symtoms"-->
+<!--        android:textColor="@color/textColor"-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_below="@id/list_less_common_symptoms"-->
+<!--        />-->
+
+
+<!--    <ListView-->
+
+<!--        android:layout_below="@id/serious_symtoms"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World!"-->
+<!--        android:id="@+id/list_serious_symptoms"-->
+<!--        android:dividerHeight="0dp" />-->
+
+
+<!--&lt;!&ndash;    <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/empty_view_state"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_centerInParent="true"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:textAppearance="?android:textAppearanceMedium" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Loading indicator is only shown before the first load &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <ProgressBar&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/loading_indicator_state"&ndash;&gt;-->
+<!--&lt;!&ndash;        style="@style/Widget.AppCompat.ProgressBar"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_centerInParent="true"/>&ndash;&gt;-->
+
+<!--</LinearLayout>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/gif_animation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/fever"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/dry_cough"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/tiredness"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/gif_animation"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!--    <com.airbnb.lottie.LottieAnimationView-->
+            <!--        android:id="@+id/fever_view"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="300dp"-->
+            <!--        android:scaleType="centerCrop"-->
+            <!--        app:lottie_autoPlay="true"-->
+            <!--        app:lottie_loop="true" />-->
+
+            <!--    <com.airbnb.lottie.LottieAnimationView-->
+            <!--        android:layout_below="@id/fever_view"-->
+            <!--        android:id="@+id/dry_cough_view"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="300dp"-->
+            <!--        android:scaleType="centerCrop"-->
+            <!--        app:lottie_autoPlay="true"-->
+            <!--        app:lottie_loop="true" />-->
+
+            <!--    <com.airbnb.lottie.LottieAnimationView-->
+            <!--        android:layout_below="@id/dry_cough_view"-->
+            <!--        android:id="@+id/tiredness_animation"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="300dp"-->
+            <!--        android:scaleType="centerCrop"-->
+            <!--        app:lottie_autoPlay="true"-->
+            <!--        app:lottie_loop="true" />-->
+
+
+            <!--    <com.example.covid_19.RecyclerViewEmptySupport-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:id="@+id/recycler_empty_view"-->
+            <!--        android:scrollbars="vertical">-->
+            <!--    <TextView-->
+            <!--        android:id="@+id/empty_view_news"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:layout_centerInParent="true"-->
+            <!--        android:gravity="center"-->
+
+            <!--        android:textAppearance="?android:textAppearanceMedium" />-->
+            <!--    </com.example.covid_19.RecyclerViewEmptySupport>-->
+
+            <!-- Loading indicator is only shown before the first load -->
+            <!--    <ProgressBar-->
+            <!--        android:id="@+id/loading_indicator_news"-->
+            <!--        style="@style/Widget.AppCompat.ProgressBar"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_centerInParent="true"/>-->
+
+            <TextView
+
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization."
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_marginTop="10dp"
+                android:text="Most common symptoms :"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line2"
+                android:layout_marginTop="10dp"
+                android:text="i.   Fever \nii.  Dry cough \niii. Tiredness "
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line3"
+                android:layout_marginTop="10dp"
+                android:text="Less common symptoms :"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/line5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line4"
+                android:layout_marginTop="10dp"
+                android:text="i.   aches and pains\nii.  sore throat\niii. diarrhoea\niv  conjunctivitis\nv.  headache\nvi. loss of taste or smell\nvii.a rash on skin, or discolouration of fingers or toes"
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line5"
+                android:layout_marginTop="10dp"
+                android:text="Serious symptoms:"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/line7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line6"
+                android:layout_marginTop="10dp"
+                android:text="i.   Difficulty breathing or shortness of breath \nii.  Chest pain or pressure \niii. Loss of speech or movement "
+                android:textColor="@color/textColor" />
+
+
+            <TextView
+                android:id="@+id/line8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line7"
+                android:layout_marginTop="10dp"
+                android:text="Seek immediate medical attention if you have serious symptoms. Always call before visiting your doctor or health facility."
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/line9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line8"
+                android:layout_marginTop="10dp"
+                android:text="People with mild symptoms who are otherwise healthy should manage their symptoms at home."
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/line10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line9"
+                android:layout_marginTop="10dp"
+                android:text="On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days."
+                android:textColor="@color/textColor" />
+
+            <Button
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line10"
+                android:layout_margin="20dp"
+                android:background="#7DEFF3"
+                android:text="See Details" />
+
+
+            <LinearLayout
+                android:id="@+id/tips1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/you_tube_ic"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="COVID-19 Update 3: Symptoms of COVID-19"
+                    android:textColor="@color/textColor"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/tips2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tips1"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/you_tube_ic"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="What Coronavirus Symptoms Look Like, Day By Day"
+                    android:textColor="@color/textColor"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tips3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tips2"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/you_tube_ic"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Symptom list for COVID-19 has been expanded"
+                    android:textColor="@color/textColor"
+
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/tips4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tips3"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/you_tube_ic"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Recognizing the symptoms of COVID-19"
+                    android:textColor="@color/textColor"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tips5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tips4"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/you_tube_ic"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Recognizing Day to Day Signs and Symptoms of Coronavirus"
+                    android:textColor="@color/textColor"
+
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</LinearLayout>

@@ -9,25 +9,29 @@
     android:background="#009688">
 
 
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         android:id="@+id/list_news"
         android:divider="@null"
-        android:dividerHeight="0dp"
-        />
+        android:dividerHeight="0dp" />
 
 
+    <!--    <com.example.covid_19.RecyclerViewEmptySupport-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/recycler_empty_view"-->
+    <!--        android:scrollbars="vertical">-->
     <TextView
         android:id="@+id/empty_view_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:textAppearance="?android:textAppearanceMedium"
-        />
+
+        android:textAppearance="?android:textAppearanceMedium" />
+    <!--    </com.example.covid_19.RecyclerViewEmptySupport>-->
 
     <!-- Loading indicator is only shown before the first load -->
     <ProgressBar
@@ -35,6 +39,6 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

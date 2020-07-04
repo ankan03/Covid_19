@@ -15,17 +15,17 @@
         android:layout_marginBottom="5dp"
         android:text="state code"
         android:textColor="#000"
-
+        android:layout_gravity="center_vertical"
         android:textSize="13dp" />
 
     <TextView
         android:id="@+id/place"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:text="Date"
-
+        android:layout_margin="5dp"
         android:textColor="@color/textColor" />
 
     <TextView
@@ -36,13 +36,14 @@
         android:layout_weight="1"
         android:gravity="start"
         android:text="Status"
+        android:layout_gravity="center_vertical"
         android:textColor="@color/textColor" />
 
     <TextView
         android:id="@+id/recover_heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
+        android:layout_gravity="center_vertical"
         android:layout_margin="5dp"
         android:layout_weight="1"
         android:gravity="end"

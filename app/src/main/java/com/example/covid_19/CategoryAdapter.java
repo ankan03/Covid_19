@@ -23,7 +23,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         } else if (position == 1) {
             return new StateFragment();
         } else if (position == 2) {
-            return new HistoryFragment();
+            return new DistrictFragment();
         } else {
             return new NewsFragment();
         }
@@ -39,9 +39,9 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return mContext.getString(R.string.category_world);
         } else if (position == 1) {
-            return mContext.getString(R.string.category_country);
+            return mContext.getString(R.string.category_state);
         } else if (position == 2) {
-            return mContext.getString(R.string.category_history);
+            return mContext.getString(R.string.category_district);
         } else {
             return mContext.getString(R.string.category_news);
         }

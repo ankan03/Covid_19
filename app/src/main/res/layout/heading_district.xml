@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_light_background"
+    android:orientation="vertical">
+
+    <!--    <EditText-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:id="@+id/edtSearch_district"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:singleLine="true"-->
+    <!--        android:paddingLeft="10dp"-->
+    <!--        android:hint="Search District"-->
+    <!--        android:drawablePadding="10dp"-->
+    <!--        android:background="@drawable/edittext_shadow"-->
+    <!--        android:drawableLeft="@drawable/ic_search_24"/>-->
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:text="state code"
+            android:textColor="#000"
+            android:gravity="top"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="District"
+            android:layout_weight="1.5"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/cases_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cases"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:gravity="end"
+            android:textColor="@color/casesColor" />
+
+        <TextView
+            android:id="@+id/recover_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_weight="1"
+            android:text="Recover"
+            android:layout_marginRight="5dp"
+            android:gravity="end"
+            android:textColor="@color/recoverColor" />
+
+        <TextView
+            android:id="@+id/death_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="10dp"
+            android:text="Death"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/dethColor" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--<ScrollView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/color_white"-->
+<!--    android:orientation="vertical"-->
+<!--    >-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".WorldActivity">
+
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardViewGraph"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="180dp"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        app:cardCornerRadius="5dp"-->
+    <!--        app:cardElevation="10dp">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:weightSum="2">-->
+
+    <!--            <org.eazegraph.lib.charts.PieChart-->
+    <!--                android:id="@+id/piechart"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_marginLeft="15dp"-->
+    <!--                android:layout_marginTop="15dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:padding="6dp" />-->
+
+    <!--&lt;!&ndash;            <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="0dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_marginLeft="20dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_weight="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:orientation="vertical">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:gravity="center_vertical">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <View&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:background="@color/cases_bar_graph_color" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:paddingLeft="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:text="Total Cases" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:gravity="center_vertical">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <View&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:background="@color/recovered_bar_graph_color" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:paddingLeft="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:text="Recovered" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:gravity="center_vertical">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <View&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:background="@color/deaths_bar_graph_color" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:paddingLeft="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:text="Deaths" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_marginTop="5dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:gravity="center_vertical">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <View&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="15dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:background="@color/active_bar_graph_color" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:paddingLeft="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                        android:text="Active" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+    <!--&lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
+
+    <!--            <org.eazegraph.lib.charts.PieChart-->
+    <!--                android:id="@+id/piechartToday_world"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_marginLeft="15dp"-->
+    <!--                android:layout_marginTop="15dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:padding="6dp" />-->
+
+    <!--        </LinearLayout>-->
+
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="All Cases"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold" />
+
+                <org.eazegraph.lib.charts.PieChart
+                    android:id="@+id/piechart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Today Cases"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold" />
+
+                <org.eazegraph.lib.charts.PieChart
+                    android:id="@+id/piechartToday_world"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+
+                    android:padding="5dp" />
+            </LinearLayout>
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginLeft="20dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="15dp"-->
+            <!--                    android:gravity="center_vertical">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="15dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:background="@color/cases" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:paddingLeft="10dp"-->
+            <!--                        android:text="Total Cases" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="15dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:gravity="center_vertical">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="15dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:background="@color/recovered" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:paddingLeft="10dp"-->
+            <!--                        android:text="Recovered" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="15dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:gravity="center_vertical">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="15dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:background="@color/deaths" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:paddingLeft="10dp"-->
+            <!--                        android:text="Deaths" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="15dp"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:gravity="center_vertical">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="15dp"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:background="@color/active" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:paddingLeft="10dp"-->
+            <!--                        android:text="Active" />-->
+
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/world_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/btnHealth"
+        android:layout_below="@+id/cardViewGraph"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.leo.simplearcloader.SimpleArcLoader
+                android:id="@+id/loader"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:arc_style="simple_arc">
+
+            </com.leo.simplearcloader.SimpleArcLoader>
+
+            <ScrollView
+                android:id="@+id/scrollStats"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:text="global stats"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textColor"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/color_two" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/cases_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_cases" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/cases_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Cases"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvCases"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/recover_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_recover" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/recover_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Recovored"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvRecovered"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/critical_color"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:src="@drawable/critical_condition" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/critical_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Critical"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvCritical"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/active_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_active" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/active_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Active"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvActive"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/death_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_death" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/death_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Total Deaths"
+                            android:textColor="@color/textColor"
+
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvTotalDeaths"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/today_cases_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_cases" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/today_cases_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Today Cases"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvTodayCases"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/today_recover_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_recover" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/today_recover_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Today Recover"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvTodayRecover"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/today_death_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/magnitude_cycle_death" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/today_death_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Today Deaths"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvTodayDeaths"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/total_country_color"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:gravity="center"
+                            android:src="@drawable/globe" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/total_country_color"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="Affected Countries"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tvAffectedCountries"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif-light"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:id="@+id/button_layout"-->
+    <!--        android:layout_below="@id/world_card_view">-->
+
+
+    <Button
+        android:id="@+id/btnHealth"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/color_one"
+        android:onClick="health"
+        android:padding="5dp"
+        android:text="Health Information"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/btnTrack"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/color_one"
+        android:onClick="goTrackCountries"
+        android:padding="5dp"
+        android:text="Track countries"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+    <!--    </LinearLayout>-->
+
+
+</RelativeLayout><!--</ScrollView>-->

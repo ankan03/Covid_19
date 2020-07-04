@@ -26,6 +26,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:textColor="@color/textColor"
         android:textStyle="bold"
+
         tools:text="Date" />
 
 
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_weight="1"
-        android:gravity="end"
+        android:gravity="start"
         android:textColor="@color/textColor"
         tools:text="no" />
 
