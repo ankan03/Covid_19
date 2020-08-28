@@ -215,8 +215,8 @@ public class NewsFragment extends Fragment
 
 
     private static final String NEWS_REQUEST_URL =
-//            "http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=67c4b6b63f3e4b74ab87ef3d15b99017";
-            "https://newsapi.org/v2/everything?q=COVID&sortBy=publishedAt&apiKey=67c4b6b63f3e4b74ab87ef3d15b99017&pageSize=100&page=1";
+            "http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=67c4b6b63f3e4b74ab87ef3d15b99017";
+//            "https://newsapi.org/v2/everything?q=COVID&sortBy=publishedAt&apiKey=67c4b6b63f3e4b74ab87ef3d15b99017&pageSize=100&page=1";
 
     private static final int NEWS_LOADER_ID = 4;
 

@@ -191,17 +191,18 @@ public class DistrictFragment extends Fragment
 
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
         mAdapter.clear();
+//        edtSearch.setVisibility(View.VISIBLE);
         return new DistrictLoader(getActivity(), DISTRICT_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<DistrictData>> loader, List<DistrictData> districtDataList) {
 
-
-        districtList = districtDataList;
-
+        if (districtDataList != null) {
+            districtList = districtDataList;
+        }
         loadingIndicator_district.setVisibility(View.GONE);
-
+        edtSearch.setVisibility(View.VISIBLE);
         mEmptyDistrictTextView.setText(R.string.unable_to_load);
 
         Log.i(LOG_TAG, "TEST: onLoadFinished() called ...");
@@ -209,6 +210,7 @@ public class DistrictFragment extends Fragment
 
         if (mAdapter.isEmpty() && districtDataList != null && !districtDataList.isEmpty()) {
             mAdapter.addAll(districtList);
+//            edtSearch.setVisibility(View.VISIBLE);
 //            mAdapter.notifyDataSetChanged();
         }
     }

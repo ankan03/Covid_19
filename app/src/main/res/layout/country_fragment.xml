@@ -20,7 +20,8 @@
         android:hint="Search Country"
         android:maxLines="1"
         android:paddingLeft="10dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:visibility="gone"/>
 
 
     <ListView

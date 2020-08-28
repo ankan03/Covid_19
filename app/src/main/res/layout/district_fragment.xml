@@ -18,7 +18,8 @@
         android:hint="Search District"
         android:maxLines="1"
         android:paddingLeft="10dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:visibility="gone"/>
 
     <ListView
         android:id="@+id/list_district"

@@ -162,16 +162,18 @@ public class StateFragment extends Fragment
 
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
         mAdapter.clear();
+//        edtSearch.setVisibility(View.VISIBLE);
         return new StateLoader(getActivity(), STATE_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<StateData>> loader, List<StateData> stateDataList) {
 
-        stateList = stateDataList;
-
+        if (stateDataList != null) {
+            stateList = stateDataList;
+        }
         loadingIndicator_state.setVisibility(View.GONE);
-
+        edtSearch.setVisibility(View.VISIBLE);
         mEmptyStateTextView.setText(R.string.unable_to_load);
 
         Log.i(LOG_TAG, "TEST: onLoadFinished() called ...");
@@ -179,6 +181,7 @@ public class StateFragment extends Fragment
 
         if (mAdapter.isEmpty() && stateDataList != null && !stateDataList.isEmpty()) {
             mAdapter.addAll(stateList);
+//            edtSearch.setVisibility(View.VISIBLE);
 //            mAdapter.notifyDataSetChanged();
         }
     }

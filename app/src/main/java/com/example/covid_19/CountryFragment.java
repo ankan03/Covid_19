@@ -194,15 +194,18 @@ public class CountryFragment extends Fragment
 
         Log.i(LOG_TAG, "TEST: onCreateLoader() called ...");
         mAdapter.clear();
+//        edtSearch.setVisibility(View.VISIBLE);
         return new CountryLoader(getActivity(), COUNTRY_REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<CountryData>> loader, List<CountryData> countryDataList) {
 
-        countryList = countryDataList;
+        if (countryDataList != null) {
+            countryList = countryDataList;
+        }
         loadingIndicator.setVisibility(View.GONE);
-
+        edtSearch.setVisibility(View.VISIBLE);
         mEmptyStateTextView.setText(R.string.unable_to_load);
 
         Log.i(LOG_TAG, "TEST: onLoadFinished() called ...");
@@ -212,9 +215,8 @@ public class CountryFragment extends Fragment
         if (mAdapter.isEmpty() && countryDataList != null && !countryDataList.isEmpty()) {
 //            mAdapter.addAll(countryDataList);
             //  mAdapter.notifyDataSetChanged();
-
-
             mAdapter.addAll(countryList);
+
 
         }
 
